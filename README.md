@@ -1,70 +1,132 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Tours Project
 
-In the project directory, you can run:
+This project is a simple React-based web application that displays various tours. Users can view the details of each tour, read more information, and remove tours they are not interested in. Once all tours are removed, a refresh button allows users to reload the tour list.
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Components](#components)
+  - [App](#app-component)
+  - [Tours](#tours-component)
+  - [Card](#card-component)
+- [Styling](#styling)
+- [Contributing](#contributing)
+- [License](#license)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+The project contains the following files and directories:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+├── src
+│   ├── App.js
+│   ├── components
+│   │   ├── Tours.js
+│   │   ├── Card.js
+│   ├── data.js
+│   ├── App.css
+└── README.md
+```
 
-### `npm run build`
+- **App.js**: The main entry point of the application.
+- **components**: Contains all the reusable components like `Tours.js` and `Card.js`.
+- **data.js**: Contains the data (list of tours) that is rendered on the website.
+- **App.css**: Contains the styling for the project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Display a list of tours with images, names, descriptions, and prices.
+- Show a shortened description of each tour, with the option to "Read more" or "Show less."
+- Remove a tour from the list when a user clicks the "Not Interested" button.
+- Refresh the list of tours when there are no tours left.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `npm run eject`
+1. Clone the repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   git clone https://github.com/your-username/tours-project.git
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Navigate to the project directory:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   cd tours-project
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Install the dependencies:
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Start the development server:
 
-### Code Splitting
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Open the application in your browser:
 
-### Analyzing the Bundle Size
+   ```bash
+   http://localhost:3000
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+You will see a list of available tours with their descriptions and prices. You can click on **"Read more"** to expand the tour description or **"Not Interested"** to remove a tour from the list.
 
-### Making a Progressive Web App
+If all tours are removed, a message will appear saying **"No Tours left"**, and a refresh button will be available to reload the tours.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Components
 
-### Advanced Configuration
+### App Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Manages the state of the tour list using the `useState` hook.
+- Contains the logic to remove a tour from the list.
+- Displays the **Tours** component and manages refreshing when no tours are left.
 
-### Deployment
+### Tours Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Accepts the list of tours and the `removeTour` function as props.
+- Maps over the `tours` array and renders each tour as a **Card** component.
 
-### `npm run build` fails to minify
+### Card Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Displays individual tour details such as image, name, price, and a short description.
+- Provides the ability to expand the tour description and toggle between **"Read more"** and **"Show less"**.
+- The **"Not Interested"** button allows users to remove the tour from the list.
+
+## Styling
+
+All styles are contained in the `App.css` file. Key classes include:
+
+- `.container`: Layout for the main tour list.
+- `.card`: Styling for each individual tour card.
+- `.tour-info`: Contains the tour details like price and name.
+- `.description`: Displays the tour description with a **Read more** option.
+- `.btn-red`: The "Not Interested" button for removing tours.
+- `.button-white`: The refresh button when no tours are left.
+
+## Contributing
+
+Feel free to fork the project and make contributions. You can submit a pull request with your improvements.
+
+## License
+
+This project is licensed under the MIT License.
+
+Here are the screenshots which can be used to understand the code structure. 
+
+
+
+![Screenshot 2024-10-11 002219](https://github.com/user-attachments/assets/03ab8791-f2c5-41b5-8fd0-1ac8d367d47b)
+![Screenshot 2024-10-11 002239](https://github.com/user-attachments/assets/78334c0c-e8d9-4460-8a81-1d262b9e1feb)
+![Screenshot 2024-10-11 002254](https://github.com/user-attachments/assets/48095937-8baa-4919-accf-1cf7b442d1d3)
+![Screenshot 2024-10-11 002329](https://github.com/user-attachments/assets/cec9f575-3d70-44b1-901c-bd793190c332)
+![Screenshot 2024-10-11 002348](https://github.com/user-attachments/assets/1069ddb3-ffda-4680-9805-c23a8028e89e)
